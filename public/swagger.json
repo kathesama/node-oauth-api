@@ -9,9 +9,8 @@
 		"securitySchemes": {}
 	},
 	"info": {
-		"title": "granja_backend",
+		"title": "node-oauth-api",
 		"version": "1.0.0",
-		"description": "Backend para el sistema de monitorizacion de granja",
 		"license": {
 			"name": "Apache-2.0"
 		},

@@ -4,6 +4,7 @@ import { isNil, isNaN, isEmpty } from 'lodash';
 import { languageTypes } from '../domain/enums/language.enum';
 import { HttpRequest, HttpResponse } from '../interfaces/http.interface';
 import { GenericError } from '../interfaces/http/errors/GenericError';
+import { Cookie } from 'nodemailer/lib/fetch/cookies';
 
 export const serverErrorHelper = (error: Error): HttpResponse => {
   const name = 'Internal Server Error';
@@ -44,6 +45,12 @@ export const clientRequestHelper = (res: Response, errCode: number, error: strin
 export const successHelper = (data: any): HttpResponse => ({
   statusCode: 200,
   body: data,
+});
+
+export const successHelperWithCookie = (data: any, cookie?: Cookie): HttpResponse => ({
+  statusCode: 200,
+  body: data,
+  cookie,
 });
 
 /**

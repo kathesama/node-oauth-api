@@ -145,7 +145,7 @@ export class MakeVerifyGoogleUserFactory implements ControllerInterface {
 
         const cookie: Cookie = environmentConfig().serverConfig.IS_COOKIE_HTTPONLY_BASED
           ? {
-              name: 'refresh-token',
+              name: 'session',
               value: refresh['token'],
               ...options,
             }
@@ -158,7 +158,7 @@ export class MakeVerifyGoogleUserFactory implements ControllerInterface {
               expires: access['expires'],
             },
             refresh: environmentConfig().serverConfig.IS_COOKIE_HTTPONLY_BASED
-              ? undefined
+              ? {}
               : {
                   token: refresh['token'],
                   expires: refresh['expires'],
